@@ -32,7 +32,7 @@ TEST_CASE("Alerter")
 {
     BatteryCharacter batteryChar;
     batteryChar.coolingType = PASSIVE_COOLING;
-    //("CONTROLLER alaert") 
+    //("CONTROLLER alert") 
     { REQUIRE(checkAndAlert(TO_CONTROLLER, batteryChar, 50) == true); }
     //("Email alaert")
     REQUIRE(sendToEmail(NORMAL) == "Temperature is Normal");
