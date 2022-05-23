@@ -5,7 +5,7 @@
 
 using namespace std;
 
-int const      coolingLowerLimit = 0;
+
 vector<int>    coolingUpperLimits{30, 45, 40};
 vector<string> breachTypeMessage{"Temperature is Normal", "Temperature is too low", "Temperature is too high"};
 
@@ -22,13 +22,11 @@ BreachType inferBreach(double value, double lowerLimit, double upperLimit)
     return NORMAL;
 }
 
-int getLowerLimitFromcoolingType() { return (coolingLowerLimit); }
-
 int getupperLimitFromcoolingType(CoolingType coolingType) { return (coolingUpperLimits[coolingType]); }
 
 BreachType classifyTemperatureBreach(CoolingType coolingType, double temperatureInC)
 {
-    int lowerLimit = getLowerLimitFromcoolingType();
+    int lowerLimit = 0;
     int upperLimit = getupperLimitFromcoolingType(coolingType);
     return inferBreach(temperatureInC, lowerLimit, upperLimit);
 }
